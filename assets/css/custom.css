@@ -148,5 +148,13 @@ body { font-family: var(--global-font) }
 
 .theme-one { background-color: var(--gray-100) }
 
+
+
+.container-menu.menu-desktop { background-color: var(--gray-300) }
+.container-menu.menu-mobile { background-color: var(--gray-300) }
+.container-menu.menu-mobile ul.mobile-display { background-color: var(--gray-300) }
+
 footer { background-color: var(--black-000) }
+
+
 
