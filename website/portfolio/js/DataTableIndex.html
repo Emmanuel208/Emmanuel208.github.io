@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://www.munnelly.com/javascript/2022-js/portfolio/js/data-tables/ -->
+<html lang="en" coupert-item="9AF8D9A4E502F3784AD24272D81F0381"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Data Tables Project | Mary Smith | Front-end Developer | </title>
+    <meta name="description" content="Uses the Fetch API to retrieve a searchable list of movie titles and images from the Internet Movie Database.">
+
+	<!-- Stylesheets -->
+    <link rel="stylesheet" href="./DataTableIndex_files/lunadoge.css">
+    <link rel="stylesheet" href="./DataTableIndex_files/css-javascript.css">
+
+    <style>
+
+        /* ============ Header Colours =============*/
+        header.hero-block-js { background-color: #f7df1e }
+        header.hero-block-js h1 { color: #222 }
+        header.hero-block-js h2 { color: var(--gray-700) }
+
+        /* Main Colours */
+        .theme-js { 
+            background-image:#ff0000; background-image:  
+            radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0, transparent 50%),  
+            radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0, transparent 50%),  
+            radial-gradient(at 0% 50%, hsla(355,85%,93%,1) 0, transparent 50%),  
+            radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0, transparent 50%),  
+            radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0, transparent 50%),  
+            radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0, transparent 50%),  
+            radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0, transparent 50%);
+        }
+
+        .theme-js .col-2 { background-color: var(--green-100) }
+        .theme-js h3 { color: #222 }
+        .theme-js p { color: #222 }
+
+        /* Button Colours: passive state */
+        .theme-js a.btn { 
+            color: #fff; background-color: blue; transition: 0.2s;
+            border-radius: 6px
+        }
+
+        /* Button Colours: active state */
+        /* .theme-js a.btn:hover { background-color: darkblue }
+
+        .theme-js a.btn { background-image: linear-gradient(to right,#e052a0,#f15c41) } 
+        .theme-js a.btn:hover { filter: brightness(140%) saturate(140%) }  */
+
+        /* ========= ENDS CUSTOM CSS FOR WEB PAGE ======= */
+
+        
+        .theme-js { text-align: center}
+        .container-table { margin: 0 auto;}
+
+        @media (min-width: 768px) { 
+            .container-table { 
+                padding-top: 4%; 
+                padding-bottom: 4% 
+            }
+        }      
+        
+        @media (max-width: 767px) { 
+            .container-table { 
+                padding: 5% 10% 
+            } 
+        }
+        
+        /* All tables */
+        .data-table {
+            border-collapse: collapse;
+            font-size: 18px;
+            width: 100%;
+            overflow: scroll;
+            margin-bottom: 56px;
+            border: solid 1px #888;
+            box-shadow: 8px 8px 8px #888;  
+        }
+
+        .data-table td, .data-table th { padding: 8px 18px; text-align: left }
+
+        /* Tables with light theme */
+        .table-theme-light thead tr th { background-color: lightgray }
+        .table-theme-light tr:nth-child(odd)  { background-color: #fff }
+        .table-theme-light tr:nth-child(even) { background-color: #E1E4E7 }
+
+        /* Delete button */
+        .theme-js .table-theme-light td a.btn {
+            background-color: blue;
+            color:#fff;
+            padding: 4px 12px;
+            font-size: 90%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .theme-js .table-theme-light td a.btn:hover {
+            background-color: darkblue;
+        }
+
+        .table-theme-light td a.btn i { margin-right: 12px }
+
+        .table-theme-light td a.btn > * { pointer-events: none; }
+
+        button.add-row {
+            padding: 10px 22px; 
+            background-color: red;
+            color:#fff;
+            font-size: 20px;
+            border-radius: 50px;
+            margin-bottom: 48px;
+        }
+
+        button.add-row i { margin-left: 8px }
+
+    </style>
+
+	<!-- Font Awesome 6.1 icons -->
+    <link rel="stylesheet" href="./DataTableIndex_files/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<style>
+        @font-face{
+            font-family: 'Circular'; 
+            font-weight: 400;
+            src: url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Regular.eot);
+            src: url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Regular.eot?#iefix) format('embedded-opentype'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Regular.woff2) format('woff2'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Regular.woff) format('woff'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Regular.ttf) format('truetype'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Regular.svg) format('svg');
+        }
+        @font-face{
+            font-family: 'Circular'; 
+            font-weight: 700;
+            src: url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Bold.eot);
+            src: url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Bold.eot?#iefix) format('embedded-opentype'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Bold.woff2) format('woff2'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Bold.woff) format('woff'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Bold.ttf) format('truetype'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Bold.svg) format('svg');
+        }
+    </style></head>
+
+
+<body>
+
+    <!-- navigation menu -->
+
+    <nav class="container-menu menu-desktop menu-sticky">
+        <a href="https://www.munnelly.com/javascript/2022-js/portfolio/js/data-tables/#"><img src="./DataTableIndex_files/website-logo.png" alt="website logo"></a>
+        <ul class="">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../index.html">Portfolio</a></li>
+            <li><a href="../../contact/index.html" id="btn-cta"><span>Contact</span><i class="fas fa-arrow-right"></i></a></li>
+        </ul>
+        <div class="item-icon">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </nav>
+        
+    <!-- header hero block -->
+    <header class="hero-block hero-block-js">
+        <div class="hero-text-container">
+            <h1>Data Tables <span>JavaScript Project</span></h1>
+            <h2>Populates an HTML table with data stored in an array. Includes the option to remove data items. View my complete collection of <a href="https://www.munnelly.com/javascript/2022-js/portfolio/js/index.html">JavaScript projects</a>.</h2>
+        </div>
+    </header>
+
+    <!-- main content with sections -->
+    <main>
+        
+        <section class="container-flex theme-js">
+
+            <div class="container-table">
+
+
+                <table class="data-table table-theme-light" id="myTable">
+                  <thead>
+                      <tr>
+                          <th>Student ID</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Action</th>
+                      </tr>
+                  </thead>
+                  <tbody id="studentData"></tbody>
+                </table>
+      
+                <p><button class="add-row" id="btn_populate" onclick="populateTable()">Populate Table <i class="fa-solid fa-circle-plus"></i></button></p>
+      
+              </div>
+
+        </section>
+
+    </main>
+
+    <script>
+
+let all_btns = document.querySelectorAll('#myTable .btn');
+
+// Joe Bloggs, JavaScript Developer
+all_btns.forEach(el => el.addEventListener('click', event => {
+    event.preventDefault();
+    // get button id
+    btn_id = event.currentTarget.id;
+    deleteRow(btn_id);
+}));
+
+
+function deleteRow(btn_id) {
+    console.log(btn_id);
+    console.log("Clicked button: "+btn_id);
+    const rows = document.querySelectorAll("#myTable tr");
+    for (let i = rows.length; i--;) {
+        if(rows[i].innerHTML.includes(btn_id)) {
+            rows[i].parentNode.removeChild(rows[i]);
+        }
+    }
+}
+
+const arrStudentData = [
+    {id: "1224", firstname: "John", lastname: "Smith"},
+    {id: "5678", firstname: "Jane", lastname: "Higgins"},
+    {id: "1717", firstname: "Frank", lastname: "Jones"},
+    {id: "2121", firstname: "Mary", lastname: "Dwyer"}
+];
+
+function populateTable(){
+    var tableContent = "";
+    let delBtn = "<a class=\"btn\" onclick=\"deleteRow(this)\"><i class=\"fa-solid fa-trash-can\"></i>Delete</a>";
+    for(var i in arrStudentData){
+        tableContent += "<tr>";
+        tableContent += "<td>" + arrStudentData[i].id +"</td>" 
+            + "<td>" + arrStudentData[i].firstname +"</td>" 
+            + "<td>" + arrStudentData[i].lastname +"</td>" 
+            + "<td><a class=\"btn\" onclick=\"deleteRow("+arrStudentData[i].id+")\"><i class=\"fa-solid fa-trash-can\"></i>Delete</a></td>";
+            tableContent += "</tr>";
+    }
+ 
+    document.getElementById("studentData").innerHTML = tableContent;
+    document.getElementById("btn_populate").innerHTML = "Refresh Table <i class=\"fa-solid fa-circle-plus\"></i>";
+}
+
+    </script>
+
+    
+    <!-- footer -->
+	<footer>
+
+		<h2>Your Name Here</h2>
+
+		<h3>Excellence in digital creation</h3>
+
+		<ul class="footer-links">
+			<li><a href="../../index.html">Home</a></li>
+			<li><a href="../index.html">Portfolio</a></li>
+			<li><a href="../../contact/index.html">Contact</a></li>
+		</ul>
+
+		<ul class="footer-icons">
+			<li><a href="https://www.linkedin.com/nnnnnnnnnnn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+			<li><a href="https://github.com/nnnnnnnnnn" target="_blank"><i class="fab fa-github-square"></i></a></li>
+		</ul>
+
+		<p class="index.html"> <a href="../../Privacy.html" style="color: #fff; background-color:transparent;">Privacy &amp; Legal</a> </p>
+       
+    </footer>
+
+    <script src="./DataTableIndex_files/menu.js.download"></script>
+
+
+
+
+
+
+
+
+
+
+</body><div id="9c92a28a-bcd5-4288-873d-2541cf96bb1e" style="all: initial;"></div><div id="eb319d4c-cc6d-4af6-bf24-24eb793ac690" style="all: initial;"></div><div id="997a8018-c495-46a6-a791-cf897dcba596" style="all: initial;"></div><div id="3b0e1e5a-a6dd-402b-aad2-a2ff4a62afc0" style="all: initial;"></div><div id="2e3c7a24-5668-4775-b0a9-58ab6d4b457a" style="all: initial;"></div><div id="9c2ff688-f93c-49dc-a67a-0183378fa9b8" style="all: initial;"></div><div id="c034ecb1-1d09-4f91-9558-a05d5b1a0d43" style="all: initial;"></div><div id="942960fb-f586-4a42-818f-7b9135df1f2a" style="all: initial;"></div><div id="aa8fe080-8971-4d3b-9b1e-e47c47f6efcb" style="all: initial;"></div><div id="93029610-4e43-4e2a-a71e-9edf67e8c9d2" style="all: initial;"></div><div id="d3bedacb-667f-416c-a9f0-154aa0662e2d" style="all: initial;"></div><div id="253f9b29-43d4-4b9f-8834-dc1875a226cc" style="all: initial;"></div><div id="137f4ab6-f355-4377-b481-8e8afb085ead" style="all: initial;"></div></html>
