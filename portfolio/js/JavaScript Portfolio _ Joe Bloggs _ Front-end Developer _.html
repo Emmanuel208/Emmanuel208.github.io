@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://www.munnelly.com/javascript/2022-js/portfolio/js/index.html -->
+<html lang="en" coupert-item="9AF8D9A4E502F3784AD24272D81F0381"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Portfolio | Joe Bloggs | Front-end Developer | </title>
+    <meta name="description" content="A sample collection of my recent JavaScript projects.">
+
+	<!-- Stylesheets -->
+    <link rel="stylesheet" href="./JavaScript Portfolio _ Joe Bloggs _ Front-end Developer __files/lunadoge.css">
+    <link rel="stylesheet" href="./JavaScript Portfolio _ Joe Bloggs _ Front-end Developer __files/css-javascript.css">
+
+    <style>
+
+        /* ============ Header Colours =============*/
+        header.hero-block-js { background-color: #f7df1e }
+        header.hero-block-js h1 { color: #222 }
+        header.hero-block-js h2 { color: var(--gray-700) }
+
+        /* Main Colours */
+        .theme-js { 
+            background-image:#ff0000;background-image:  
+            radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0, transparent 50%),  
+            radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0, transparent 50%),  
+            radial-gradient(at 0% 50%, hsla(355,85%,93%,1) 0, transparent 50%),  
+            radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0, transparent 50%),  
+            radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0, transparent 50%),  
+            radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0, transparent 50%),  
+            radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0, transparent 50%);
+        }
+
+        .theme-js .col-2 { background-color: var(--green-100) }
+        .theme-js h3 { color: #222 }
+        .theme-js p { color: #222 }
+
+        /* Button Colours: passive state */
+        .theme-js a.btn { 
+            color: #fff; background-color: blue; transition: 0.2s;
+            border-radius: 6px
+        }
+
+        /* Button Colours: active state */
+        .theme-js a.btn:hover { background-color: darkblue }
+
+        .theme-js a.btn { background-image: linear-gradient(to right,#e052a0,#f15c41) } 
+        .theme-js a.btn:hover { filter: brightness(140%) saturate(140%) } 
+
+    </style>
+
+	<!-- Font Awesome 6.1 icons -->
+    <link rel="stylesheet" href="./JavaScript Portfolio _ Joe Bloggs _ Front-end Developer __files/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<style>
+        @font-face{
+            font-family: 'Circular'; 
+            font-weight: 400;
+            src: url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Regular.eot);
+            src: url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Regular.eot?#iefix) format('embedded-opentype'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Regular.woff2) format('woff2'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Regular.woff) format('woff'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Regular.ttf) format('truetype'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Regular.svg) format('svg');
+        }
+        @font-face{
+            font-family: 'Circular'; 
+            font-weight: 700;
+            src: url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Bold.eot);
+            src: url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Bold.eot?#iefix) format('embedded-opentype'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Bold.woff2) format('woff2'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Bold.woff) format('woff'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Bold.ttf) format('truetype'),
+                url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Circular-Pro-Black-Bold.svg) format('svg');
+        }
+    </style></head>
+
+
+<body>
+
+    <!-- navigation menu -->
+
+    <nav class="container-menu menu-desktop menu-sticky">
+        <a href="https://www.munnelly.com/javascript/2022-js/portfolio/js/index.html#"><img src="./JavaScript Portfolio _ Joe Bloggs _ Front-end Developer __files/website-logo.png" alt="website logo"></a>
+        <ul class="">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../index.html">Portfolio</a></li>
+            <li><a href="../../contact/index.html" id="btn-cta"><span>Contact</span><i class="fas fa-arrow-right"></i></a></li>
+        </ul>
+        <div class="item-icon">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </nav>
+        
+    <!-- header hero block -->
+    <header class="hero-block hero-block-js">
+        <div class="hero-text-container">
+            <h1>JavaScript Projects</h1>
+            <h2>A selection of my recent JavaScript projects.</h2>
+            <img src="./JavaScript Portfolio _ Joe Bloggs _ Front-end Developer __files/firstCodeSnap.png" alt="Sample JavaScript code">
+        </div>
+    </header>
+
+    <!-- main content with sections -->
+    <main>
+        
+        <section class="container-flex theme-js">
+
+            <div class="col-2">
+                
+                <h3>Data Tables</h3>
+                
+                <p>Populates an HTML table with data stored in an array. Includes the option to remove data items.</p>
+                
+                <div class="container-btn">
+                    <a href="../js/DataTableIndex.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-2">
+                
+                <h3>Weather for Dublin</h3>
+                
+                <p>Uses the Fetch API to retrieve current weather information for the city of Dublin, Ireland.</p>
+                
+                <div class="container-btn">
+                    <a href="https://www.munnelly.com/javascript/2022-js/portfolio/js/weather/index.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-2">
+                
+                <h3>Movies Listing</h3>
+                
+                <p>Uses the Fetch API to retrieve a searchable list of movie titles and images from the Internet Movie Database.</p>
+                
+                <div class="container-btn">
+                    <a href="../js/movieIndex.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-2">
+                
+                <h3>Random Quotes Generator</h3>
+                
+                <p>Uses the Fetch API to retrieve a randomly-choosen selection of ten inspiring quotations.</p>
+                
+                <div class="container-btn">
+                    <a href="../js/RandomQuotesIndex.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-2">
+                
+                <h3>Image Blue Filter</h3>
+                
+                <p>Uses CSS variables and HTML custom data attributes to adjust the filter blur property of an image.</p>
+                
+                <div class="container-btn">
+                    <a href="../js/imagBlurIndex.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-2">
+                
+                <h3>Counter</h3>
+                
+                <p>An increment and decrement counter that changes the colour of the number displayed on the web page.</p>
+                
+                <div class="container-btn">
+                    <a href="../js/counterIndex.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-2">
+                
+                <h3>Tip Calculator</h3>
+                
+                <p>Calculates the tip for a restaurant bill based on the level of service and the number of customers.</p>
+                
+                <div class="container-btn">
+                    <a href="../js/tipsCalculatorIndexhtml.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-2">
+                
+                <h3>Image Slideshow</h3>
+                
+                <p>A slideshow with an array of images from Dublin city, Ireland.</p>
+                
+                <div class="container-btn">
+                    <a href="../js/imagSlidesIndex.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+
+            <div class="col-2">
+                
+                <h3>Random Colour Generator</h3>
+                
+                <p>Uses an array of hexadecimal values to randomly generate a background colour for the web page.</p>
+                
+                <div class="container-btn">
+                    <a href="../js/RandomColorGenIndex.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    
+    <!-- footer -->
+	<footer>
+
+		<h2>Joe Bloggs</h2>
+
+		<h3>Excellence in digital creation</h3>
+
+		<ul class="footer-links">
+			<li><a href="../../index.html">Home</a></li>
+			<li><a href="../index.html">Portfolio</a></li>
+			<li><a href="../../contact/index.html">Contact</a></li>
+		</ul>
+
+		<ul class="footer-icons">
+			<li><a href="https://www.linkedin.com/nnnnnnnnnnn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+			<li><a href="https://github.com/nnnnnnnnnn" target="_blank"><i class="fab fa-github-square"></i></a></li>
+		</ul>
+
+		<p class="index.html"> <a href="../../Privacy.html" style="color: #fff; background-color:transparent;">Privacy &amp; Legal</a> </p>
+       
+    </footer>
+
+    <script src="./JavaScript Portfolio _ Joe Bloggs _ Front-end Developer __files/menu.js.download"></script>
+
+
+
+
+
+
+
+
+
+
+</body><div id="8eed7f06-cd86-4d17-8a0b-f6b96aa20866" style="all: initial;"></div><div id="94e85229-61fe-4a11-91b3-6b3a10bea092" style="all: initial;"></div><div id="7a5ff242-4e77-4eff-891c-7329af1534e0" style="all: initial;"></div><div id="4aff66af-a97e-45ad-9192-de2acd116524" style="all: initial;"></div><div id="84c78615-c0e2-46ef-9594-74fc400afdba" style="all: initial;"></div><div id="d2e33e46-6fcd-454f-b969-e2433cb2cc1e" style="all: initial;"></div><div id="072ed948-f38c-4020-9c98-385b89feb4b3" style="all: initial;"></div><div id="e6998ef0-eb56-42e6-a80d-b074195a8a4e" style="all: initial;"></div><div id="51e88d10-f293-46f5-ba9c-af3ee00350ff" style="all: initial;"></div><div id="5623e754-9aa5-47b4-a8cb-5b1de4f4634e" style="all: initial;"></div><div id="53762af2-1a63-40e5-8ab0-88fc1c058c5b" style="all: initial;"></div><div id="4a97ffc3-29aa-432e-a148-088443a7409e" style="all: initial;"></div><div id="86ae5fbc-b9c2-42a3-865e-e9108ec0ce60" style="all: initial;"></div></html>
